@@ -1,0 +1,28 @@
+﻿1. first i have install three nuget packages 
+	Microsoft.EntityFrameworkCore.SqlServer 8.0.19
+	Microsoft.EntityFrameworkCore.Tools 8.0.19
+	Microsoft.EntityFrameworkCore.Design 8.0.19
+
+2. create a folder called Data which place a class AppDbContext.cs
+	
+	 public class AppDbContext:DbContext
+    {
+        public AppDbContext(DbContextOptions<AppDbContext> options):base(options)
+        {
+            
+        }
+    }
+3. Add the AppDbContext.cs service to the Program.cs and also configure the database connection inside the appsettings.json file
+
+    //Add the AppDbContext class to the service
+    Program.cs: 
+
+    builder.Services.AddDbContext<AppDbContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("DBCS"))
+    );
+
+    appsettings.json:
+
+    "ConnectionStrings": {
+    "DBCS": "server=CLIENT56\\SQLEXPRESS;database=EFCoreDb;Trusted_Connection=True;TrustServerCertificate=True;",
+  }

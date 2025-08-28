@@ -1,1 +1,15 @@
-﻿
+﻿1. first go to the view -> terminal -> move to the project directory
+2. command
+	1. git init //for git initialization
+	2. Add a .gitignore file in the directory of .sln file
+	   and add the file name which has not need to push to the repo
+	    .vs/
+		*.user
+		*.suo
+		bin/
+		obj/
+	3. git add .
+	4. git commit -m "Demo code push to the Repo"
+	5. git remote add origin https://github.com/Sirsananda/EFCoreApp.git // here i set the origin
+	6. git branch -M Development // Here put the branch name which is default at the repo
+	7. git push -u origin Development or git push -u origin Development --force // push code to the repo 
