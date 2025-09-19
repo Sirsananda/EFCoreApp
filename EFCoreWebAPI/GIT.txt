@@ -13,3 +13,26 @@
 	5. git remote add origin https://github.com/Sirsananda/EFCoreApp.git // here i set the origin
 	6. git branch -M Development // Here put the branch name which is default at the repo
 	7. git push -u origin Development or git push -u origin Development --force // push code to the repo 
+
+	8. fetch details from the repo
+		git fetch origin // git pull origin
+
+	9. create branch 
+		1. git branch <branch-name> //Create a new branch
+		2. git checkout <branch-name> //Switch to that branch
+		3. git checkout -b <branch-name> //Create and Switch to that branch
+		4. git push -u origin <branch-name> //Push the branch to remote
+	10. git reset --soft HEAD~1 /git reset --soft HEAD~2 .... this command will reset the commit not the stagging upto 1,2 ... and Your changes will still be staged (ready to commit again).
+		Undo last 2 commits and keep changes (unstaged)
+		git reset HEAD~2 (Code remains in working directory, but not staged.)
+	11. git reset --hard HEAD~1 /git reset --hard HEAD~2 .... This deletes the commits 1,2 .. and their changes permanently:
+
+12. if you want to send large file >100 MB then we use the below command in the GIT Bash
+git lfs install
+git lfs track "*.exe"
+git add .gitattributes
+git commit -m "Track exe files with Git LFS"
+git add AllDemo/ffmpeg.exe AllDemo/ffprobe.exe
+git commit -m "Add large binaries via Git LFS"
+git push origin CRUD-AdmissionTypes
+
